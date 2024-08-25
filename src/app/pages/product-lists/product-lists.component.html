@@ -234,12 +234,14 @@
                                                     [options]="groupedFullfilment" 
                                                     [(ngModel)]="selectedFullfilment" 
                                                     placeholder="Fullfilment" 
-                                                    [group]="true">
+                                                    [group]="true"
+                                                    (onChange)="filterItems()">
                                                     <ng-template let-group pTemplate="group">
                                                         <div class="flex align-items-center">
                                                             <img 
-                                                                src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
-                                                                [class]="'mr-2 flag flag-' + group.value" 
+                                                                *ngIf="group.icon" 
+                                                                [src]="group.icon" 
+                                                                class="mr-2" 
                                                                 style="width: 20px" />
                                                                 <span>{{ group.label }}</span>
                                                         </div>
@@ -251,16 +253,14 @@
                                                     [options]="groupedSize" 
                                                     [(ngModel)]="selectedSize" 
                                                     placeholder="Size" 
-                                                    [group]="true">
+                                                    [group]="true"
+                                                    (onChange)="filterItems()">
                                                     <ng-template let-group pTemplate="group">
                                                         <div class="flex align-items-center">
-                                                            <img 
-                                                                src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
-                                                                [class]="'mr-2 flag flag-' + group.value" 
-                                                                style="width: 20px" />
                                                                 <span>{{ group.label }}</span>
                                                         </div>
                                                     </ng-template>
+
                                                 </p-dropdown>
                                             </div>
                                             <div class="me-1">
@@ -268,13 +268,10 @@
                                                     [options]="groupColor" 
                                                     [(ngModel)]="selectedColor" 
                                                     placeholder="Color" 
-                                                    [group]="true">
+                                                    [group]="true"
+                                                    (onChange)="filterItems()">
                                                     <ng-template let-group pTemplate="group">
                                                         <div class="flex align-items-center">
-                                                            <img 
-                                                                src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
-                                                                [class]="'mr-2 flag flag-' + group.value" 
-                                                                style="width: 20px" />
                                                                 <span>{{ group.label }}</span>
                                                         </div>
                                                     </ng-template>
@@ -304,7 +301,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr class="tabel-detail" *ngFor="let item of baseSkus">
+                                                        <tr class="tabel-detail" *ngFor="let item of filteredBaseSkus">
                                                             <td class="text-nowrap">
                                                                 <div class="table-text">
                                                                     <img width="20" [src]="item.location_icon" class="table-img">

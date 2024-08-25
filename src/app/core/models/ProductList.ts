@@ -1,39 +1,37 @@
-export interface ProductList {
-  brandName: string;
-  model: string;
+interface Location {
+  id: string;
   name: string;
-  createAt: string;
-  uri: number;
-  product_id: string;
-  printProvider: PrintProvider;
-  minPrice: number;
-  tags: string[];
-  totalColors: number;
-  totalSizes: number;
-  media: Media[];
-  analytics: Analytics;
-  paginatedResponse:PaginatedResponse;
+  value: string;
+  icon: string;
+  position: string;
 }
 
-export interface Analytics {
-  rate: number;
-  profitScore: number;
-  trendingScore: number;
+interface OptionValue {
+  id: string;
+  name: string;
+  value?: string;  // Optional, as it's only used for colors
+  position: number;
 }
-export interface PrintProvider {
-  totalProvider: number;
-  ProviderName: string[];
+
+interface BaseSku {
+  location_id: string;
+  size_id: string;
+  color_id: string;
+  location_icon: string;
+  location_name: string;
+  size_name: string;
+  color_name: string;
+  sku: string;
+  base_cost: number;
+  second_side_price: number;
+  shipping_cost_us: number;
+  shipping_adding_us: number;
+  shipping_cost_ww: number;
+  shipping_adding_ww: number;
 }
-export interface Media {
-  type: string;
-  src: string;
-}
- export interface PaginatedResponse {
-  products: ProductList[];
-  per_page: number;
-  total: number;
-  last_page: number;
-  from: number;
-  to: number;
-  current_page: number;
+
+interface DropdownGroup {
+  label: string;
+  icon?: string;
+  value?: string;  // Use if there is a value associated with the group
 }

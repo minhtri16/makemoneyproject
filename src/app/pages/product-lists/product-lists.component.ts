@@ -5,7 +5,7 @@ import { DialogModule, } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
-import { SelectItemGroup } from 'primeng/api';
+import { SelectItem, SelectItemGroup } from 'primeng/api';
 import { CommonModule } from '@angular/common';
 
 
@@ -22,72 +22,72 @@ import { CommonModule } from '@angular/common';
 export class ProductListsComponent implements OnInit{
     
   visible: boolean = false;
-  groupedFullfilment: SelectItemGroup[];
-  groupedSize: SelectItemGroup[];
-  groupColor: SelectItemGroup[];
+  public groupedFullfilment: SelectItemGroup[] = [];
+  public groupedSize: SelectItemGroup[] = [];
+  public groupColor: SelectItemGroup[] = [];
+  public locations: SelectItem[] = [];
 
   selectedFullfilment: string | undefined;
   selectedSize: string | undefined;
   selectedColor: string | undefined;
   public baseSkus: any[] = [];
+  public filteredBaseSkus: any[] = [];
 
-  constructor(private productService: ProductListService) {
-    this.groupedFullfilment = [
-      {
-        label: 'Fullfilment',
-        value: 'F',
-        items: [
-          { label: 'All', value: 'All' },
-          { label: 'Denali', value: 'Denali' },
-          { label: 'Vini', value: 'Vini' },
-        ]
-      },
-    ];
-
-    this.groupedSize = [
-      {
-        label: 'Size',
-        value: 'Si',
-        items: [
-          { label: 'All', value: 'All' },
-          { label: 'S', value: 'S' },
-          { label: 'M', value: 'M' },
-          { label: 'L', value: 'L' },
-          { label: 'XL', value: 'XL' },
-        ]
-      },
-    ];
-
-    this.groupColor = [
-      {
-        label: 'Color',
-        value: 'Co',
-        items: [
-          { label: 'All', value: 'All' },
-          { label: 'Denali', value: 'Denali' },
-          { label: 'White', value: 'White' },
-          { label: 'Ash', value: 'Ash' },
-          { label: 'Black', value: 'Black' },
-          { label: 'Dark Heather', value: 'Dark Heather' },
-        ]
-      },
-    ];
-  }
+  constructor(private productService: ProductListService) {}
   ngOnInit(): void {
     this.productService.getData()
       .subscribe(
         (response) => {
-          console.log('API Response:', response);
-          if (response && response.base_sku) {
-            this.baseSkus = response.base_sku;
+            this.baseSkus = response.data.base_sku;
+            this.processOptionsAndLocations(response.data.options, response.data.locations);
+            this.filterItems();
             console.log('Base SKUs:', this.baseSkus);
-          } else {
-            console.error('Data is not in expected format');
-          }
         },
       );
   }
-
+  processOptionsAndLocations(options: any[], locations: any[]) {
+    options.forEach((option) => {
+      if (option.name === 'color') {
+        this.groupColor = [{
+          label: 'Color',
+          value: 'color',
+          items: option.values.map((value: any) => ({
+            label: value.name,
+            value: value.id
+          }))
+        }];
+      }
+      if (option.name === 'size') {
+        this.groupedSize = [{
+          label: 'Size',
+          value: 'size',
+          items: option.values.map((value: any) => ({
+            label: value.name,
+            value: value.id
+          }))
+        }];
+      }
+    });
+    if (locations) {
+      this.groupedFullfilment = [{
+        label: 'Fullfilment',
+        value: 'fullfilment',
+        items: locations.map((location) => ({
+          label: location.name,
+          value: location.id,
+          icon: location.icon,
+          details: location.value
+        }))
+      }];
+    } 
+  }
+  filterItems() {
+    this.filteredBaseSkus = this.baseSkus.filter(item => {
+      return (this.selectedFullfilment ? item.value === this.selectedFullfilment : true) &&
+             (this.selectedSize ? item.data.options.id === this.selectedSize : true) &&
+             (this.selectedColor ? item.data.options.id === this.selectedColor : true);
+    });
+  }
   showDialog() {
     this.visible = true;
   }
