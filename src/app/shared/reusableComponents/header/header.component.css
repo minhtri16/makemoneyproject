@@ -1,0 +1,116 @@
+.header {
+  display: block;
+  background-color: #fff;
+  border-bottom: 1px solid #e3e4e5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  gap: 2.5rem;
+}
+
+.p-megamenu-panel {
+  width: 100vw;
+  position: fixed;
+  top: 71px;
+  left: 0;
+}
+
+.p-megamenu-panel > * > * {
+  width: auto;
+}
+
+.p-megamenu-grid {
+  padding: 1.5rem 0;
+  justify-content: center;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.p-megamenu .p-submenu-list {
+  width: auto;
+}
+
+.p-megamenu-grid > * {
+  margin-right: 1.5rem;
+}
+
+.item {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.item:hover {
+  color: #29ab51;
+}
+
+.p-megamenu-grid > *:first-child,
+.p-megamenu-grid > * > * > * :nth-child(2) {
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.p-megamenu-grid > *:not(:first-child) > * > * :nth-child(n + 3) {
+  font-size: 0.875em;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+
+.icon {
+  pointer-events: none;
+  transition: transform 0.15s ease;
+  transform-origin: 50% 50%;
+}
+
+.p-menuitem-active > * > * > i {
+  transform: rotate(180deg);
+}
+
+.p-megamenu-root-list > .p-menuitem-active > .p-megamenu-panel {
+  animation: fade-in-top 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes fade-in-top {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1134px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 1134px) {
+  .navigation {
+    display: none;
+  }
+}
+
+.sidebar {
+  background: #ffffff;
+  border: 0 none;
+}
+
+.p-sidebar-header {
+  border-bottom: 1px solid #e3e4e5;
+}
+
+.p-sidebar-header > button {
+  margin-right: 24px;
+}

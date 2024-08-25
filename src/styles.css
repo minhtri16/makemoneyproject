@@ -1,0 +1,18 @@
+@import "primeicons/primeicons.css";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+
+*, ::after, ::before{
+  box-sizing: border-box;
+}
+
+body {
+  color:#101821;
+  font-family: Manrope;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+

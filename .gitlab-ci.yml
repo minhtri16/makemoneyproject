@@ -1,0 +1,35 @@
+stages:
+  - build
+  - deploy
+  - checklog
+
+build:
+  stage: build
+  script:
+    - echo "Building Angular application..."
+    - docker-compose build
+  tags:
+    - lab-server
+  only:
+    - developer
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying Angular application..."
+    - docker-compose up -d
+    
+  tags:
+    - lab-server
+  only:
+    - developer
+
+checklog:
+  stage: checklog
+  script:
+    - echo "Checking logs..."
+    - docker-compose logs angular-app
+  tags:
+    - lab-server
+  only:
+    - developer

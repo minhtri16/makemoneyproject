@@ -1,0 +1,22 @@
+<div class="grid" style="margin-top: 50px; margin-bottom: 30px;">
+
+    <div class="col-10 search-container">
+        <span class="material-symbols-outlined search-icon">
+            search
+        </span>
+        <input type="text" placeholder="Search for products, brands, categories, and print providers">
+    </div>
+
+    <div class="col-1 cu">
+        <p style="margin-left: 10px;margin-top: 15px;">Currency</p>
+    </div>
+    <div class="col-1 but">
+        <button class="buttonSmall" type="button" (click)="openDropdown()">
+            <div class="text">{{ selectedCurrency }}</div>
+            <span class="material-symbols-outlined hh">
+                arrow_drop_down
+            </span>
+        </button>
+        <app-currency-switcher (currencySelected)="updateCurrency($event)"></app-currency-switcher>
+    </div>
+</div>

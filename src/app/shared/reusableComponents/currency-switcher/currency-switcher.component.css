@@ -1,0 +1,77 @@
+
+.dropdown {
+    position: absolute;
+    width: 200px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .dropdown-content {
+    padding: 20px;
+  }
+  
+  .dropdown-content h3 {
+    margin-top: 0;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+  }
+  
+  li { 
+    padding: 10px;
+    text-align: center;
+  }
+  
+  li.selected {
+    background-color: #f0f0f0;
+  }
+  
+  li.selected::before {
+    content: "check";
+    font-family: 'Material Symbols Outlined';
+    color: green;
+    margin-right: 10px;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  
+  .img1{
+    width: 25px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 10px;
+    
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .cancel-button {
+    background-color: transparent;
+    border: none;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .apply-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .apply-button:hover {
+    background-color: #45a049;
+  }

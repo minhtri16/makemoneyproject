@@ -1,0 +1,17 @@
+<div class="currency-selector">
+    <div class="dropdown" *ngIf="isOpen">
+        <div class="dropdown-content">
+            <h5>Catalog currency</h5>
+            <ul>
+                <li *ngFor="let currency of currencies" (click)="selectCurrency(currency)"
+                    [class.selected]="currency === selectedCurrency"> 
+                    <span><img [src]="getFlag(currency)" alt="Flag" class="img1"></span> {{ currency }}
+                </li>
+            </ul>
+            <div class="buttons">
+                <button class="cancel-button" (click)="closeDropdown()">Cancel</button>
+                <button class="apply-button" (click)="applySelection()">Apply</button>
+            </div>
+        </div>
+    </div>
+</div>

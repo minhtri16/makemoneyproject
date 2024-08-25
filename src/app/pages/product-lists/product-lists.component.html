@@ -1,0 +1,374 @@
+<div class="container-grid">
+    <div class="header">
+        <nav class="nav align-items-center bg-white px-5 bg-header" style="height: 4rem;">
+            <img src="https://dash.burgerprints.com/assets/img/logo-bgp.svg" alt="logo" width="180" height="32" class="d-none d-lg-block">
+            <div class="ms-auto">
+                <div class="hea-left">
+                    <ul class="nav align-items-center gap-header">
+                        <li class="nav-item d-none d-md-block cursor-pointer">
+                            <div class="bg-header-item-wallet nav-as-btn ps-1 pe-4 rounded" style="text-decoration: none;">
+                                <div class="d-flex align-items-center" style="font-size: 17px;">
+                                        Auto fulfillments : 
+                                    <span class="fw-600">Off</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item d-none d-md-block">
+                            <a routerlink ="#" class="bg-header-item-wallet nav-as-btn ps-1 pe-4 rounded text-decoration-none text-white" href="#">
+                                <span class="sl3-header-wallet-fill fs-24">
+                                    <i class="pi pi-wallet"></i>
+                                </span>
+                                <span class="text-dark" style="margin-left: 8px;">$0.00</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="mat-menu-trigger nav-as-btn rounded px-1 cursor-pointer" style="text-decoration: unset;" aria-haspopup="menu">
+                                <span class="sl3-header-help-fill fs-24">
+                                    <i class="pi pi-question-circle" style="font-size: 19px;"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="dropdownNotify" data-bs-toggle="dropdown" role="button" aria-expanded="false" class="nav-as-btn rounded px-1 position-relative" 
+                            style="text-decoration: unset;">
+                                <span class="sl3-header-notify-fill fs-24">
+                                    <i class="pi pi-bell" style="font-size: 19px;"></i>
+                                </span>
+                                <span class="badge d-flex justify-content-center align-items-center">9+</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false" role="button" class="text-decoration-none">
+                                <div class="nav-as-btn rounded" style="padding: 4px 4px 4px 8px">
+                                    <div class="text-dark-user" style="margin-left: 6px;">Starter</div>
+                                    <div class="icon-login">
+                                        <div class="rounded">
+                                            <div class="user-picture" style="background-image: url(&quot;https://lh3.googleusercontent.com/a/ACg8ocK3cicyGmfe3X5x32JhdkELW9SGkjxiGqmlKtl2EbBigQqQPe6Y=s96-c&quot;);">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- <div class="d-block d-lg-none">
+            <a role="button" cdkoverlayorigin>
+                <i class="bi bi-list fs-30 text-dark"></i>
+            </a>
+        </div> -->
+    </div>
+    <div class="alert-grid">
+        <!-- <alert-bar></alert-bar> -->
+    </div>
+    <main class="main-body">
+        <div class="sidebar d-none d-lg-block">
+            <div class="sidebar bg-white">
+                <div class="h-sidebar">
+                    <div class="px-4 py-2">
+                        <ul class="list-group list-main-menu list-unstyled">
+                            <li class="list">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center mb-2px" 
+                                routerlink="#" routerlinkactive="active" href="#">
+                                    <i class="pi pi-home" style="font-size: 25px; color: #90a4ae !important;"></i>
+                                    <span class="router-name">Home</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center mb-2px" 
+                                routerlink="#" routerlinkactive="active" href="#">
+                                    <i class="pi pi-warehouse" style="font-size: 25px; color: #90a4ae !important;"></i>
+                                    <span class="router-name">Catalogue</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center mb-2px" 
+                                routerlink="#" routerlinkactive="active" href="#">
+                                    <i class="pi pi-clipboard" style="font-size: 25px; color: #90a4ae !important;"></i>
+                                    <span class="router-name">Order</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center mb-2px" 
+                                routerlink="#" routerlinkactive="active" href="#">
+                                    <i class="pi pi-tag" style="font-size: 25px; color: #90a4ae !important;"></i>
+                                    <span class="router-name">Product</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center mb-2px" 
+                                routerlink="#" routerlinkactive="active" href="#">
+                                    <i class="pi pi-image" style="font-size: 25px; color: #90a4ae !important;"></i>
+                                    <span class="router-name">Media</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center mb-2px" 
+                                routerlink="#" routerlinkactive="active" href="#">
+                                    <i class="pi pi-replay" style="font-size: 25px; color: #90a4ae !important;"></i>
+                                    <span class="router-name">Logs</span>
+                                </a>
+                            </li>
+                            <li class="list mb-2">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center mb-2px" 
+                                routerlink="#" routerlinkactive="active" href="#">
+                                    <i class="pi pi-pen-to-square" style="font-size: 25px; color: #90a4ae !important;"></i>
+                                    <span class="router-name">Document</span>
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <div class="border-bottom-list"></div>
+                            </li>
+                            <li class="list-store">
+                                <div class="list-group-item">
+                                    <span class="text-dark-store" style="font-size: 18px;">Store channel</span>
+                                    <a class="float-end cursor-pointer text-white">
+                                        <i class="pi pi-plus-circle"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-group list-main-menu list-unstyled">
+                            <li class="list-default">
+                                <a class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <img src="https://dash.burgerprints.com/assets/img/image-fulfillment-new.svg" class="fs-4 pe-1" style="padding: 4px 0; max-width: 100%; font-size: 17px;">
+                                    <span class="mat-tooltip-trigger router-name2" aria-describedby="cdk-describedby-message-niy-1-353" >Default</span>
+                                    <div class="mat-menu-trigger position-absolute pe-1 cursor-pointer" style="right: 0;" aria-haspopup="menu">
+                                        <i class="pi pi-cog" ></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="list-group list-main-menu list-unstyled sticky-bottom bg-white">
+                        <li class="mt-lg-auto p-4 pt-0">
+                            <div class="border-bottom-list mb-2"></div>
+                            <a class="list-group-item list-group-item-action d-flex align-items-center cursor-pointer">
+                                <span class="material-symbols-outlined" style="padding: 4px;">
+                                    settings
+                                    </span>
+                                <span class="router-name2">Setting</span> 
+                             </a> 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <!-- <router-outlet></router-outlet> -->
+             <div class="under-content">
+                <div class="container my-6">
+                    <div class="mb-6">
+                        <nav aria-label="breadcrum">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a routerlink="#" class="text-darkslate text-decoration-none" href="#" style="font-size: 17px;">Catalouge</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a class="text-darkslate text-decoration-none cursor-pointer" style="font-size: 17px;">Printed Apparel</a>
+                                </li>
+                                <li aria-current="page" class="breadcrumb-item active text-dark">Unisex T-Shirt | Gildan 5000</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="mb-5">
+                        <h4 class="title-global mb-1">Unisex T-Shirt | Gildan 5000 (US)</h4>
+                        <div class="d-flex flex-wrap">
+                            <div>
+                                <div class="d-flex" style="gap: 3px;">
+                                    <div class="text-darkslate mb-1">Start with: </div>
+                                    <p class="mb-0 fw-500">$6.55</p>
+                                </div>
+                                <div class="d-flex" style="gap: 3px;">
+                                    <div class="text-darkslate mb-1">SKU:  </div>
+                                    <p class="mb-0 fw-500">USG5000</p>
+                                </div>
+                                <div class="hstack flex-wrap gap-1 mb-1">
+                                    <div class="text-darkslate">Fulfillment facility:</div>
+                                    <div class="badge-text1 rounded-pill bg-neutral-50 text-dark px-2 fs-6 fw-normal">
+                                        <div class="hstack gap-1">
+                                            <img width="14" src="https://d1ud88wu9m1k4s.cloudfront.net/icons/ic_Tier_Standard_24x24.svg" class="img1">
+                                            <span class="text1">Denali</span>
+                                        </div>
+                                    </div>
+                                    <div class="badge-text1 rounded-pill bg-neutral-50 text-dark px-2 fs-6 fw-normal">
+                                        <div class="hstack gap-1">
+                                            <img width="14" src="https://d1ud88wu9m1k4s.cloudfront.net/icons/ic_Tier_Standard_24x24.svg" class="img1">
+                                            <span class="text1">Vini</span>
+                                        </div>
+                                    </div>
+                                    <div class="badge-text1 rounded-pill bg-neutral-50 text-dark px-2 fs-6 fw-normal">
+                                        <div class="hstack gap-1">
+                                            <img width="14" src="https://d1ud88wu9m1k4s.cloudfront.net/icons/ic_Tier_Standard_24x24.svg" class="img1">
+                                            <span class="text1">Grand</span>
+                                        </div>
+                                    </div>
+                                    <div class="badge-text1 rounded-pill bg-neutral-50 text-dark px-2 fs-6 fw-normal">
+                                        <div class="hstack gap-1">
+                                            <img width="14" src="https://d1ud88wu9m1k4s.cloudfront.net/icons/ic_Tier_Standard_24x24.svg" class="img1">
+                                            <span class="text1">Spire</span>
+                                        </div>
+                                    </div>
+                                    <a class="text-primary text-decoration-none cursor-pointer text-nowrap" style="font-size: 18px;">See more
+                                        <i class="pi pi-arrow-right" style="font-size:12px"></i>
+                                    </a>
+                                </div>
+                                <p-button (onClick)="showDialog()" label="All options" />
+                                    <p-dialog 
+                                        header="Unisex T-Shirt | Gildan 5000 (US)" 
+                                        [modal]="true"
+                                        [(visible)]="visible" 
+                                        [style]="{ width: '100vw', height:'calc(-4rem + 100vh)', 'max-width':'100vw','max-height': '100vw'}" 
+                                        [breakpoints]="{ 
+                                         '1199px': { width: '100vw', height: 'calc(-4rem + 100vh)', 'max-height': '100vw' }, 
+                                         '575px': { width: '100vw', height: 'calc(-4rem + 100vh)', 'max-height': '100vw' } 
+                                        }">
+                                        <div class="border-bottom-list mb-2"></div>
+                                        <div>
+                                          <div class="d-flex mb-4">
+                                            <div class="me-1">
+                                                <p-dropdown 
+                                                    [options]="groupedFullfilment" 
+                                                    [(ngModel)]="selectedFullfilment" 
+                                                    placeholder="Fullfilment" 
+                                                    [group]="true">
+                                                    <ng-template let-group pTemplate="group">
+                                                        <div class="flex align-items-center">
+                                                            <img 
+                                                                src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                                                                [class]="'mr-2 flag flag-' + group.value" 
+                                                                style="width: 20px" />
+                                                                <span>{{ group.label }}</span>
+                                                        </div>
+                                                    </ng-template>
+                                                </p-dropdown>
+                                            </div>
+                                            <div class="me-1">
+                                                <p-dropdown 
+                                                    [options]="groupedSize" 
+                                                    [(ngModel)]="selectedSize" 
+                                                    placeholder="Size" 
+                                                    [group]="true">
+                                                    <ng-template let-group pTemplate="group">
+                                                        <div class="flex align-items-center">
+                                                            <img 
+                                                                src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                                                                [class]="'mr-2 flag flag-' + group.value" 
+                                                                style="width: 20px" />
+                                                                <span>{{ group.label }}</span>
+                                                        </div>
+                                                    </ng-template>
+                                                </p-dropdown>
+                                            </div>
+                                            <div class="me-1">
+                                                <p-dropdown 
+                                                    [options]="groupColor" 
+                                                    [(ngModel)]="selectedColor" 
+                                                    placeholder="Color" 
+                                                    [group]="true">
+                                                    <ng-template let-group pTemplate="group">
+                                                        <div class="flex align-items-center">
+                                                            <img 
+                                                                src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                                                                [class]="'mr-2 flag flag-' + group.value" 
+                                                                style="width: 20px" />
+                                                                <span>{{ group.label }}</span>
+                                                        </div>
+                                                    </ng-template>
+                                                </p-dropdown>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="content-dialog">
+                                        <div>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead class="table-light">
+                                                        <tr class="align-middle">
+                                                            <th class="fw-500" rowspan="2">Fulfillment facility</th>
+                                                            <th class="fw-500" rowspan="2">Size</th>
+                                                            <th class="fw-500" rowspan="2">Color</th>
+                                                            <th class="fw-500" rowspan="2">SKU</th>
+                                                            <th class="fw-500" rowspan="2">Base cost</th>
+                                                            <th class="fw-500" rowspan="2">2nd price</th>
+                                                            <th class="fw-500 text-center" colspan="4">Shipping fee</th>
+                                                        </tr>
+                                                        <tr class="table-tittle">
+                                                            <td class="fw-500">US</td>
+                                                            <td class="fw-500">US addition</td>
+                                                            <td class="fw-500">WW</td>
+                                                            <td class="fw-500">WW addition</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="tabel-detail" *ngFor="let item of baseSkus">
+                                                            <td class="text-nowrap">
+                                                                <div class="table-text">
+                                                                    <img width="20" [src]="item.location_icon" class="table-img">
+                                                                    <span class="ms-1">{{ item.location_name }}</span>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-nowrap">
+                                                                <div class="table-text">{{ item.size_name }}</div>
+                                                            </td>
+                                                            <td class="text-nowrap">
+                                                                <div class="table-text">{{ item.color_name }}</div>
+                                                            </td>
+                                                            <td class="text-nowrap">
+                                                                <div class="table-text">{{ item.sku }}</div>
+                                                            </td>
+                                                            <td class="text-nowrap">
+                                                                <div class="table-text">${{ item.base_cost }}</div>
+                                                            </td>
+                                                            <td class="text-nowrap">
+                                                                <div class="table-text">${{ item.second_side_price }}</div>
+                                                            </td>
+                                                            <td class="text-nowrap">
+                                                                <div class="table-text">${{ item.shipping_cost_us }}</div>
+                                                            </td>
+                                                            <td class="text-nowrap">
+                                                                <div class="table-text">${{ item.shipping_adding_us }}</div>
+                                                            </td>
+                                                            <td class="text-nowrap">
+                                                                <div class="table-text">${{ item.shipping_cost_ww }}</div>
+                                                            </td>
+                                                            <td class="text-nowrap">
+                                                                <div class="table-text">${{ item.shipping_adding_ww }}</div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </p-dialog>
+                        </div>
+                            <div class="d-flex flex-column ms-auto">
+                                <button class="btn btn-warning text-white create-btn mb-1" tabindex="0">Create product</button>
+                                <button class="btn btn-extra create-btn " tabindex="0">Create Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <div class="cursor-pointer">
+                            <div class="owl-carousel owl-theme owl-loaded owl-responsive owl-drag">
+                                <div class="owl-stage-outer">
+                                    <div class="img-area">
+                                        <div class="owl-item ng-tns-c267-8 ng-trigger ng-trigger-autoHeight active center" style="width: 870px;">
+                                            <div class="rounded border bg-neutral-50 d-flex justify-content-center">
+                                                <img class="size-banner" src="https://d1ud88wu9m1k4s.cloudfront.net/reduce/assets/base-mockups/burgerprints/USG5000.jpg" alt="#">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </main>
+</div>

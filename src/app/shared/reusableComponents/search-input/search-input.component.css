@@ -1,0 +1,63 @@
+
+
+.buttonSmall {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border: 1px solid #9e9d9d;
+    background-color: white; 
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.hh {
+    font-size: 2em;
+    /* Kích thước icon */
+}
+.buttonSmall:hover{
+    color: #29ab51;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+}
+
+.search-container input[type="text"] {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+.search-container .search-icon {
+    font-size: 24px;
+    color: #888;
+    margin-right: 10px;
+}
+
+@media (max-width: 959px) {
+
+    .search-container {
+        flex-basis: 70%;
+    }
+
+    .search-container input {
+        width: 100%;
+    }
+    .cu{
+        display: none;
+    }
+    .but{
+        flex-basis: 30%;
+      
+    }
+}

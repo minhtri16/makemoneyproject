@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  angular-app:
+    container_name: fe-project
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    networks:
+      - catalog
+
+networks:
+  catalog:
+    external: true
