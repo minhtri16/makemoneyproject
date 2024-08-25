@@ -83,11 +83,25 @@ export class ProductListsComponent implements OnInit{
   }
   filterItems() {
     this.filteredBaseSkus = this.baseSkus.filter(item => {
-      return (this.selectedFullfilment ? item.value === this.selectedFullfilment : true) &&
-             (this.selectedSize ? item.data.options.id === this.selectedSize : true) &&
-             (this.selectedColor ? item.data.options.id === this.selectedColor : true);
+      const conditions :boolean[] = [];
+      const matches: any = {
+        [ item.location ]: this.selectedFullfilment,
+        [ item.size_id ]: this.selectedSize,
+        [ item.color_id ]: this.selectedColor,
+         }
+         //matches_keys là mảng các key của matches
+      const matches_keys=Object.keys(matches)
+      for(let i = 0; i < matches_keys.length; i++){
+        const k = matches_keys[i];
+        if(!matches[k]) continue
+        conditions.push(k === matches[k])
+      } 
+      return conditions.every((condition : boolean) =>condition)
+
     });
+    
   }
+
   showDialog() {
     this.visible = true;
   }
