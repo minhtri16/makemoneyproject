@@ -233,7 +233,7 @@
                                                 <p-dropdown 
                                                     [options]="groupedFullfilment" 
                                                     [(ngModel)]="selectedFullfilment" 
-                                                    placeholder="Fullfilment" 
+                                                    placeholder="Fullfilment:All" 
                                                     [group]="true"
                                                     (onChange)="filterItems()">
                                                     <ng-template let-group pTemplate="group">
@@ -252,7 +252,7 @@
                                                 <p-dropdown 
                                                     [options]="groupedSize" 
                                                     [(ngModel)]="selectedSize" 
-                                                    placeholder="Size" 
+                                                    placeholder="Size:All" 
                                                     [group]="true"
                                                     (onChange)="filterItems()">
                                                     <ng-template let-group pTemplate="group">
@@ -267,7 +267,7 @@
                                                 <p-dropdown 
                                                     [options]="groupColor" 
                                                     [(ngModel)]="selectedColor" 
-                                                    placeholder="Color" 
+                                                    placeholder="Color:All" 
                                                     [group]="true"
                                                     (onChange)="filterItems()">
                                                     <ng-template let-group pTemplate="group">
