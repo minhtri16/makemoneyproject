@@ -55,14 +55,8 @@
                 </div>
             </div>
         </nav>
-        <!-- <div class="d-block d-lg-none">
-            <a role="button" cdkoverlayorigin>
-                <i class="bi bi-list fs-30 text-dark"></i>
-            </a>
-        </div> -->
     </div>
     <div class="alert-grid">
-        <!-- <alert-bar></alert-bar> -->
     </div>
     <main class="main-body">
         <div class="sidebar d-none d-lg-block">
@@ -249,33 +243,36 @@
                                                 </p-dropdown>
                                             </div>
                                             <div class="me-1">
-                                                <p-dropdown 
-                                                    [options]="groupedSize" 
-                                                    [(ngModel)]="selectedSize" 
+                                                <p-multiSelect 
+                                                    [options]="groupedSize"
+                                                    [(ngModel)]="selectedSize"
+                                                    optionLabel="label" 
                                                     placeholder="Size:All" 
                                                     [group]="true"
+                                                    showToggleAll="true"
                                                     (onChange)="filterItems()">
                                                     <ng-template let-group pTemplate="group">
                                                         <div class="flex align-items-center">
                                                                 <span>{{ group.label }}</span>
                                                         </div>
                                                     </ng-template>
-
-                                                </p-dropdown>
+                                                </p-multiSelect>
                                             </div>
                                             <div class="me-1">
-                                                <p-dropdown 
+                                                <p-multiSelect 
                                                     [options]="groupColor" 
                                                     [(ngModel)]="selectedColor" 
+                                                    optionLabel="label" 
                                                     placeholder="Color:All" 
                                                     [group]="true"
+                                                    showToggleAll="true"
                                                     (onChange)="filterItems()">
                                                     <ng-template let-group pTemplate="group">
                                                         <div class="flex align-items-center">
                                                                 <span>{{ group.label }}</span>
                                                         </div>
                                                     </ng-template>
-                                                </p-dropdown>
+                                                </p-multiSelect>
                                             </div>
                                         </div>
                                     </div>
