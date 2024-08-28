@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ProductListService } from '../../core/services/product-list.service';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
@@ -105,9 +105,12 @@ export class ProductListsComponent implements OnInit {
         [item.size_id]: this.selectedSize,
         [item.color_id]: this.selectedColor,
       };
+      // lay ta ca khoa (key) trong doi tuong matches
       const matches_keys = Object.keys(matches);
       for (let i = 0; i < matches_keys.length; i++) {
         const key = matches_keys[i];
+        if (matches[key] === 'all') continue;
+        //kiem tra neu gia tri la mang(chon duoc nhieu color, size)
         if (Array.isArray(matches[key])) {
           if (matches[key].length > 0) {
             for (let j = 0; j < matches[key].length; j++) {
@@ -121,8 +124,9 @@ export class ProductListsComponent implements OnInit {
             }
           }
         } else {
+          //neu khong cho gia tri nao , bo qua kiem tra 
           if (!matches[key]) continue;
-          if (matches[key] === 'all') continue;
+          // kiem tra neu gia tri san pham khop voi lua chon 
           conditions.push(key === matches[key]);
         }
       }

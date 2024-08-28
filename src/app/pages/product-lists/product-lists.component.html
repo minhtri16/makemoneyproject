@@ -211,7 +211,7 @@
                                     </a>
                                 </div>
                                 
-                                <!--  BAT DAU TABLE -->
+                                <!--  BAT DAU TABLE, showToggleAll="true" ở cả gropsize và grouptable là button tương tự như "All" -->
                                 <p-button (onClick)="showDialog()" label="All options" />
                                     <p-dialog 
                                         header="Unisex T-Shirt | Gildan 5000 (US)" 
@@ -251,7 +251,7 @@
                                                     optionLabel="label" 
                                                     placeholder="Size:All" 
                                                     [group]="true"
-                                                    showToggleAll="true"
+                                                    showToggleAll="true"          
                                                     (onChange)="filterItems()">
                                                     <ng-template let-group pTemplate="group">
                                                         <div class="flex align-items-center">
